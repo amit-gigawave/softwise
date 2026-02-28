@@ -29,7 +29,7 @@ export const ValueProps = () => {
                                 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl leading-[1.1] text-primary font-black tracking-tighter glow-primary"
                             >
                                 Intelligence you feel.
-                                <span className="block italic-accent text-secondary/60 mt-2 font-light glow-secondary">
+                                <span className="block italic-accent text-secondary/60 mt-2 font-light glow-secondary  text-2xl md:text-5xl">
                                     Autonomous progress you can trust.
                                 </span>
                             </motion.h2>
@@ -39,7 +39,7 @@ export const ValueProps = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-base md:text-lg text-secondary/80 font-medium max-w-xl leading-relaxed"
+                                className="text-sm md:text-lg text-secondary/80 font-medium max-w-xl leading-relaxed"
                             >
                                 A robust agentic AI infrastructure designed for autonomous reasoning,
                                 seamless tool integration, and high-stakes business automation.

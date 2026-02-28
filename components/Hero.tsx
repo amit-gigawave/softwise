@@ -55,14 +55,14 @@ export const Hero = () => {
                         className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter max-w-5xl text-primary leading-none md:leading-[0.95] mb-8 md:mb-10 glow-primary"
                     >
                         Custom Agentic AI <br />
-                        <span className="italic-accent text-secondary/60 font-light text-5xl glow-secondary">for the Intelligent Core.</span>
+                        <span className="italic-accent text-secondary/60 font-light text-3xl md:text-5xl glow-secondary">for the Intelligent Core.</span>
                     </motion.h1>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-col gap-4 text-base sm:text-lg md:text-xl text-secondary/80 font-medium max-w-2xl leading-relaxed mb-12 md:mb-16"
+                        className="flex flex-col gap-4 text-sm sm:text-lg md:text-xl text-secondary/80 font-medium max-w-2xl leading-relaxed mb-12 md:mb-16"
                     >
                         <p className="px-4">
                             We build autonomous systems that don't just process data—they reason, plan, and execute across your ecosystem. Transform passive tools into active partners.
