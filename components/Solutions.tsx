@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Bot, Network, Server, CheckCircle2, Sparkles, Box, ShieldCheck, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PremiumButton } from "./ui/PremiumButton";
+import { SectionBadge } from "./ui/SectionBadge";
 
 const solutions = [
     {
@@ -17,8 +18,8 @@ const solutions = [
             "Deterministic constraint adherence",
             "Full execution traceability"
         ],
-        gradient: "from-blue-500/20 to-transparent",
-        iconColor: "text-blue-400"
+        gradient: "from-primary/20 to-transparent",
+        iconColor: "text-primary"
     },
     {
         title: "Agentic Loop Automation",
@@ -31,8 +32,8 @@ const solutions = [
             "Low-latency decision loops",
             "Predictive bottleneck detection"
         ],
-        gradient: "from-purple-500/20 to-transparent",
-        iconColor: "text-purple-400"
+        gradient: "from-secondary/20 to-transparent",
+        iconColor: "text-secondary"
     },
     {
         title: "Production Infrastructure",
@@ -45,41 +46,33 @@ const solutions = [
             "SLA-driven scalability",
             "Comprehensive audit logging"
         ],
-        gradient: "from-emerald-500/20 to-transparent",
-        iconColor: "text-emerald-400"
+        gradient: "from-primary/20 to-transparent",
+        iconColor: "text-primary"
     }
 ];
 
 export const Solutions = () => {
     return (
-        <section id="solutions" className="relative py-32 overflow-hidden bg-transparent">
+        <section id="solutions" className="relative py-12 md:py-32 overflow-hidden bg-transparent">
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 <div className="flex flex-col items-center text-center mb-24">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6"
-                    >
-                        <Box className="w-3 h-3 text-emerald-400" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Our Offerings</span>
-                    </motion.div>
+                    <SectionBadge text="Our Offerings" icon={Box} />
 
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight"
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary mb-6 leading-tight glow-primary"
                     >
-                        Architecting <span className="text-zinc-500 italic">Agentic Workflows</span>
+                        Architecting <span className="text-secondary/60 italic glow-secondary">Agentic Workflows</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-lg text-zinc-400 max-w-2xl font-medium"
+                        className="text-lg text-secondary/80 max-w-2xl font-medium"
                     >
                         We build the bedrock for the next generation of business automation—where AI doesn't just assist, but acts.
                     </motion.p>
@@ -105,24 +98,24 @@ export const Solutions = () => {
                                     <Sparkles className="w-5 h-5 text-white/10 group-hover:text-white/30 transition-colors" />
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                                <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
                                     {solution.title}
                                 </h3>
 
-                                <p className="text-zinc-400 leading-relaxed font-medium mb-10 flex-1">
+                                <p className="text-secondary/80 leading-relaxed font-medium mb-10 flex-1">
                                     {solution.description}
                                 </p>
 
                                 <div className="mt-auto space-y-6">
                                     <div className="h-px bg-white/5 w-full" />
                                     <div>
-                                        <h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-4">
+                                        <h4 className="text-[10px] font-bold text-secondary/60 uppercase tracking-[0.3em] mb-4">
                                             {solution.listHeading}
                                         </h4>
                                         <ul className="grid grid-cols-1 gap-3">
                                             {solution.bullets.map((bullet, idx) => (
-                                                <li key={idx} className="flex items-center gap-3 text-zinc-300">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/50 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                                                <li key={idx} className="flex items-center gap-3 text-secondary">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 shadow-[0_0_10px_var(--primary)]" />
                                                     <span className="text-sm font-medium">{bullet}</span>
                                                 </li>
                                             ))}

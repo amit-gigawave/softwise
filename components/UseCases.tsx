@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Settings, BarChart3, HeadphonesIcon, DatabaseSearch, ArrowRight, Layers, Activity, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SectionBadge } from "./ui/SectionBadge";
 
 const useCases = [
     {
@@ -14,8 +15,8 @@ const useCases = [
             "Dynamic document processing",
             "Intelligent vendor workflows"
         ],
-        accent: "from-orange-500/20 to-orange-500/0",
-        iconColor: "text-orange-400"
+        accent: "from-primary/20 to-primary/0",
+        iconColor: "text-primary"
     },
     {
         title: "Reasoning-Led GTM",
@@ -26,8 +27,8 @@ const useCases = [
             "Personalized outbound agents",
             "Real-time data enrichment"
         ],
-        accent: "from-blue-500/20 to-blue-500/0",
-        iconColor: "text-blue-400"
+        accent: "from-secondary/20 to-secondary/0",
+        iconColor: "text-secondary"
     },
     {
         title: "Cognitive Support",
@@ -38,8 +39,8 @@ const useCases = [
             "Automated KB synthesis",
             "Predictive escalation loops"
         ],
-        accent: "from-purple-500/20 to-purple-500/0",
-        iconColor: "text-purple-400"
+        accent: "from-primary/20 to-primary/0",
+        iconColor: "text-primary"
     },
     {
         title: "Agentic Intelligence",
@@ -50,40 +51,32 @@ const useCases = [
             "Market signal extractions",
             "Automated KPI synthesis"
         ],
-        accent: "from-emerald-500/20 to-emerald-500/0",
-        iconColor: "text-emerald-400"
+        accent: "from-secondary/20 to-secondary/0",
+        iconColor: "text-secondary"
     }
 ];
 
 export const UseCases = () => {
     return (
-        <section id="use-cases" className="relative py-32 overflow-hidden bg-transparent">
+        <section id="use-cases" className="relative py-12 md:py-32 overflow-hidden bg-transparent">
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 <div className="flex flex-col items-center text-center mb-24">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6"
-                    >
-                        <Activity className="w-3 h-3 text-emerald-400" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Applications</span>
-                    </motion.div>
+                    <SectionBadge text="Applications" icon={Activity} />
 
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight"
+                        className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary mb-6 leading-tight glow-primary"
                     >
-                        Deploy Agency <span className="text-zinc-500 italic">Everywhere</span>
+                        Deploy Agency <span className="text-secondary/60 italic glow-secondary">Everywhere</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-zinc-400 max-w-2xl font-medium"
+                        className="text-lg text-secondary/80 max-w-2xl font-medium"
                     >
                         From operations to deep research, our agentic architecture adapts to the unique reasoning requirements of every department.
                     </motion.p>
@@ -111,23 +104,23 @@ export const UseCases = () => {
 
                                 {/* Right Side: Content */}
                                 <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                                    <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
                                         {useCase.title}
                                     </h3>
-                                    <p className="text-zinc-400 leading-relaxed mb-8 font-medium">
+                                    <p className="text-secondary/80 leading-relaxed mb-8 font-medium">
                                         {useCase.description}
                                     </p>
 
                                     <div className="space-y-4">
                                         <div className="flex items-center gap-3">
                                             <div className="h-px flex-1 bg-white/5" />
-                                            <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest whitespace-nowrap">Core Functions</span>
+                                            <span className="text-[10px] font-bold text-secondary/60 uppercase tracking-widest whitespace-nowrap">Core Functions</span>
                                             <div className="h-px flex-1 bg-white/5" />
                                         </div>
 
                                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
                                             {useCase.examples.map((example, idx) => (
-                                                <li key={idx} className="flex items-center gap-2.5 text-zinc-300">
+                                                <li key={idx} className="flex items-center gap-2.5 text-secondary">
                                                     <div className={cn("w-1.5 h-1.5 rounded-full", useCase.iconColor.replace('text', 'bg'))} />
                                                     <span className="text-xs font-semibold tracking-wide uppercase italic">{example}</span>
                                                 </li>

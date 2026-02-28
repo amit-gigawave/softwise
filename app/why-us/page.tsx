@@ -4,8 +4,8 @@ import ChipBg from "@/components/ChipBg";
 
 export default function WhyUs() {
     return (
-        <main className="min-h-screen relative text-white pt-24">
-            <ChipBg />
+        <main className="min-h-screen relative text-white pt-20 md:pt-24">
+            {/* <ChipBg /> */}
             <WhyUsSection />
             <Contact />
         </main>

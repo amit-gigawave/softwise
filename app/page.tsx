@@ -6,7 +6,7 @@ import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-white">
+    <main className="min-h-screen text-secondary">
       <Hero />
       <Integrations />
       <ValueProps />

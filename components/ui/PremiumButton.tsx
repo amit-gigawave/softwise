@@ -31,10 +31,10 @@ export const PremiumButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
         const variantStyles = {
             primary: "bg-white text-black border-transparent",
-            secondary: "bg-zinc-900 text-white border-white/10 hover:border-white/20",
-            emerald: "bg-emerald-500 text-black border-transparent",
-            outline: "bg-white/[0.03] text-white border-white/10 hover:border-white/20",
-            ghost: "bg-transparent text-white/70 hover:text-white border-transparent"
+            secondary: "bg-zinc-900 text-white border-white/10 hover:border-primary/20",
+            emerald: "bg-primary text-black border-transparent",
+            outline: "bg-white/[0.03] text-white border-white/10 hover:border-primary/20",
+            ghost: "bg-transparent text-secondary/70 hover:text-primary border-transparent"
         };
 
         const sizeStyles = {
@@ -50,7 +50,7 @@ export const PremiumButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 <span
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
-                        background: `radial-gradient(80px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.08), transparent)`,
+                        background: `radial-gradient(80px circle at ${position.x}px ${position.y}px, rgba(var(--primary-rgb),0.15), transparent)`,
                     }}
                 />
 
@@ -73,7 +73,7 @@ export const PremiumButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 {/* Border Beam Animation for specific variants */}
                 {(variant === "outline" || variant === "secondary") && (
                     <span className="absolute inset-0 rounded-lg pointer-events-none">
-                        <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_40%,rgba(255,255,255,0.2)_50%,transparent_60%,transparent_100%)]" />
+                        <span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_40%,rgba(var(--primary-rgb),0.3)_50%,transparent_60%,transparent_100%)]" />
                         <span className="absolute inset-px bg-black pointer-events-none rounded-[7px] -z-10" />
                     </span>
                 )}

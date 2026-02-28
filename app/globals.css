@@ -3,11 +3,17 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --primary: #b3e4af;
+  --primary-rgb: 165, 235, 159;
+  --secondary: #e6f7e6;
+  --secondary-rgb: 187, 222, 187;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --animate-shimmer: shimmer 2s linear infinite;
 
   @keyframes shimmer {
@@ -33,7 +39,7 @@
 
 body {
   background: #000000;
-  color: #ffffff;
+  color: var(--secondary);
   font-family: var(--font-primary), sans-serif;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
@@ -47,10 +53,113 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+
 .text-gradient {
-  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  background: linear-gradient(to right, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+.glow-primary {
+  text-shadow: 0 0 15px rgba(var(--primary-rgb), 0.4),
+    0 0 30px rgba(var(--primary-rgb), 0.2);
+}
+
+.glow-secondary {
+  text-shadow: 0 0 15px rgba(var(--secondary-rgb), 0.4),
+    0 0 30px rgba(var(--secondary-rgb), 0.2);
+}
+
+.noise-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .04;
+  visibility: visible;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -5%)
+  }
+
+  20% {
+    transform: translate(-10%, 5%)
+  }
+
+  30% {
+    transform: translate(5%, -10%)
+  }
+
+  40% {
+    transform: translate(-5%, 15%)
+  }
+
+  50% {
+    transform: translate(-10%, 5%)
+  }
+
+  60% {
+    transform: translate(15%, 0)
+  }
+
+  70% {
+    transform: translate(0, 10%)
+  }
+
+  80% {
+    transform: translate(-15%, 0)
+  }
+
+  90% {
+    transform: translate(10%, 5%)
+  }
+
+  100% {
+    transform: translate(5%, 0)
+  }
+}
+
+/* Magnet Effect for buttons */
+.magnet-target {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em !important;
+}
+
+
+.italic-accent {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten), cursive;
 }

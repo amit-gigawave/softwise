@@ -5,27 +5,27 @@ import { FileText, Send, Zap, ShieldCheck, Cpu, Code2, Layers, Rocket, Activity 
 import { PremiumButton } from "./ui/PremiumButton";
 import Link from "next/link";
 import Image from "next/image";
+import { SectionBadge } from "./ui/SectionBadge";
 
 export const WhyUs = () => {
     return (
-        <section id="why-us" className="relative py-24 overflow-hidden border-t border-white/5 ">
+        <section id="why-us" className="relative py-12 md:py-24 overflow-hidden border-t border-white/5 ">
 
             {/* Background elements */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05)_0%,transparent_70%)] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--primary-rgb)_0%,transparent_70%)] pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
+                <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="max-w-2xl"
                     >
-                        <p className="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-3">Core Capabilities</p>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-                            Infrastructure built for <span className="text-zinc-500">autonomous scale</span>
+                        <SectionBadge text="Core Capabilities" />
+                        <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold tracking-tight text-primary leading-tight glow-primary">
+                            Infrastructure built for <span className="text-secondary/60">autonomous scale</span>
                         </h2>
-                        <p className="mt-4 text-lg text-zinc-400 leading-relaxed font-medium">
+                        <p className="mt-4 text-lg text-secondary/80 leading-relaxed font-medium">
                             From complex reasoning loops to secure tool orchestration, Softwise provides the bedrock for production-grade agentic AI.
                         </p>
                     </motion.div>
@@ -50,11 +50,11 @@ export const WhyUs = () => {
                         </div>
                         <div className="absolute bottom-0 left-0 p-6 sm:p-10 w-full">
                             <div className="flex items-center gap-3 mb-4">
-                                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-[11px] font-bold text-emerald-400 uppercase tracking-wide">Autonomous</span>
-                                <span className="text-xs font-semibold text-zinc-400 tracking-wide uppercase">Next-Gen Reasoning</span>
+                                <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/15 px-3 py-1 text-[11px] font-bold text-primary uppercase tracking-wide">Autonomous</span>
+                                <span className="text-xs font-semibold text-secondary/60 tracking-wide uppercase">Next-Gen Reasoning</span>
                             </div>
-                            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">Launch agents, not just prompts</h3>
-                            <p className="max-w-xl text-zinc-300 text-base sm:text-lg leading-relaxed font-medium">
+                            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-primary mb-4">Launch agents, not just prompts</h3>
+                            <p className="max-w-xl text-secondary text-base sm:text-lg leading-relaxed font-medium">
                                 Deploy self-correcting agentic systems that break down goals, reason across contexts, and execute multi-step tasks without constant human intervention.
                             </p>
                             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -79,13 +79,13 @@ export const WhyUs = () => {
                     >
                         <div className="p-6 sm:p-8">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl font-bold tracking-tight text-white flex items-center gap-3">
-                                    <Layers className="h-5 w-5 text-emerald-400" />
+                                <h3 className="text-xl font-bold tracking-tight text-primary flex items-center gap-3">
+                                    <Layers className="h-5 w-5 text-primary" />
                                     Dynamic Toolchains
                                 </h3>
-                                <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-400">STATEFUL</span>
+                                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/15 px-2 py-0.5 text-[10px] font-bold text-primary">STATEFUL</span>
                             </div>
-                            <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                            <p className="text-sm text-secondary/80 leading-relaxed font-medium">
                                 Enable agents to intelligently select and execute tools across your entire software stack with high precision and state tracking.
                             </p>
                             <div className="mt-6 rounded-2xl overflow-hidden border border-white/5 group-hover:border-emerald-500/20 transition-all">
@@ -108,13 +108,13 @@ export const WhyUs = () => {
                     >
                         <div className="p-6 sm:p-8">
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl font-bold tracking-tight text-white flex items-center gap-3">
-                                    <ShieldCheck className="h-5 w-5 text-emerald-400" />
+                                <h3 className="text-xl font-bold tracking-tight text-primary flex items-center gap-3">
+                                    <ShieldCheck className="h-5 w-5 text-primary" />
                                     Safety Guardrails
                                 </h3>
-                                <span className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/15 px-2 py-0.5 text-[10px] font-bold text-blue-400 uppercase">Secure</span>
+                                <span className="inline-flex items-center rounded-full border border-secondary/30 bg-secondary/15 px-2 py-0.5 text-[10px] font-bold text-secondary uppercase">Secure</span>
                             </div>
-                            <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                            <p className="text-sm text-secondary/80 leading-relaxed font-medium">
                                 Embedded security layers ensure agents strictly adhere to business rules, data privacy, and ethical constraints at runtime.
                             </p>
                             <div className="mt-6 rounded-2xl overflow-hidden border border-white/5 group-hover:border-emerald-500/20 transition-all">
@@ -136,12 +136,12 @@ export const WhyUs = () => {
                         className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 hover:border-emerald-500/30 transition-all duration-500"
                     >
                         <div className="p-6 sm:p-8">
-                            <h3 className="text-lg font-bold tracking-tight text-white flex items-center gap-3 mb-4">
-                                <Activity className="h-5 w-5 text-emerald-400" />
+                            <h3 className="text-lg font-bold tracking-tight text-primary flex items-center gap-3 mb-4">
+                                <Activity className="h-5 w-5 text-primary" />
                                 Full Traceability
-                                <span className="ml-auto inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-400">LIVE</span>
+                                <span className="ml-auto inline-flex items-center rounded-full border border-primary/30 bg-primary/15 px-2 py-0.5 text-[10px] font-bold text-primary">LIVE</span>
                             </h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                            <p className="text-sm text-secondary/80 leading-relaxed font-medium">
                                 Gain complete visibility into every reasoning step and tool call. Audit agent behavior in real-time with granular logs.
                             </p>
                             <div className="mt-6 rounded-2xl overflow-hidden border border-white/5 group-hover:border-emerald-500/20 transition-all">
@@ -163,11 +163,11 @@ export const WhyUs = () => {
                         className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 hover:border-emerald-500/30 transition-all duration-500"
                     >
                         <div className="p-6 sm:p-8">
-                            <h3 className="text-lg font-bold tracking-tight text-white flex items-center gap-3 mb-4">
-                                <Rocket className="h-5 w-5 text-emerald-400" />
+                            <h3 className="text-lg font-bold tracking-tight text-primary flex items-center gap-3 mb-4">
+                                <Rocket className="h-5 w-5 text-primary" />
                                 Production Ready
                             </h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                            <p className="text-sm text-secondary/80 leading-relaxed font-medium">
                                 Move from prototype to production-grade agentic workflows in days, not months, with our pre-built infrastructure.
                             </p>
                             <div className="mt-6 rounded-2xl overflow-hidden border border-white/5 group-hover:border-emerald-500/20 transition-all">
@@ -189,11 +189,11 @@ export const WhyUs = () => {
                         className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 hover:border-emerald-500/30 transition-all duration-500"
                     >
                         <div className="p-6 sm:p-8">
-                            <h3 className="text-lg font-bold tracking-tight text-white flex items-center gap-3 mb-4">
-                                <Cpu className="h-5 w-5 text-emerald-400" />
+                            <h3 className="text-lg font-bold tracking-tight text-primary flex items-center gap-3 mb-4">
+                                <Cpu className="h-5 w-5 text-primary" />
                                 Scalable Core
                             </h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                            <p className="text-sm text-secondary/80 leading-relaxed font-medium">
                                 Architected to handle high-frequency agent interactions with low latency across geographically distributed systems.
                             </p>
                             <div className="mt-6 rounded-2xl overflow-hidden border border-white/5 group-hover:border-emerald-500/20 transition-all">
@@ -210,3 +210,4 @@ export const WhyUs = () => {
         </section>
     );
 };
+
